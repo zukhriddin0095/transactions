@@ -1,33 +1,28 @@
 import React, { Fragment, useState } from "react";
 
-
-import transactionCard from "../components/card/transactionCard";
-
 import "bootstrap/dist/js/bootstrap.min.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./transaction.scss";
-
-
+import TransactionCard from "../components/card/cardtran/TransactionCard";
 
 const Transactions = () => {
-
   const [transaction, settransaction] = useState([
     {
       id: "0",
-      name: "joinPaths",
+      week: "dushanba",
       transaction: 120,
       summa: "998946584514",
     },
     {
       id: "1",
-      name: "karlsin",
+      week: "seshanba",
       transaction: 1100,
       summa: "998946556445",
     },
     {
-       id: "2",
-      name: "berlin ",
+      id: "2",
+      week: "chorshanba ",
       transaction: 180,
       summa: "998946588475",
     },
@@ -52,7 +47,6 @@ const Transactions = () => {
   //      handleClose();
   //    }
   //  };
-
 
   return (
     <Fragment>
@@ -125,8 +119,9 @@ const Transactions = () => {
             </div>
           </div>
         </div>
+
         {transaction.map((el) => (
-          <transactionCard  {...el}/>
+            <TransactionCard  key={el.id} {...el}/>
         ))}
       </section>
     </Fragment>
